@@ -1,0 +1,35 @@
+{
+  "name": "new-web3-app",
+  "version": "0.0.1",
+  "description": "create-web3 monorepo quickstart with next and foundry",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "yarn workspace @create-web3/frontend dev",
+    "build": "yarn workspace @create-web3/frontend build",
+    "start": "yarn workspace @create-web3/frontend start",
+    "lint": "yarn workspace @create-web3/frontend lint",
+    "chain": "yarn workspace @create-web3/backend chain",
+    "compile": "yarn workspace @create-web3/backend compile",
+    "test": "yarn workspace @create-web3/backend test",
+    "clean": "yarn workspace @create-web3/backend clean",
+    "gas": "yarn workspace @create-web3/backend gas"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@graphprotocol/graph-ts",
+      "**/@graphprotocol/graph-ts/**",
+      "**/backend",
+      "**/backend/**"
+    ]
+  },
+  "dependencies": {
+    "@rainbow-me/rainbowkit": "^2.2.1",
+    "@tanstack/react-query": "^5.63.0",
+    "viem": "^2.22.5",
+    "wagmi": "^2.14.7"
+  }
+}
