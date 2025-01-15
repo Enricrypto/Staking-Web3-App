@@ -1,41 +1,39 @@
 // Type for the handleMint function
 export interface HandleMintProps {
-  address: string | null
+  address: `0x${string}`
   writeContract: Function
   tokenAbi: any
-  depositTokenAddress: string
+  depositTokenAddress: `0x${string}`
 }
 
 export interface handleApprovalAndDepositProps {
-  address: string | null
+  address: `0x${string}`
   writeContract: Function
   tokenAbi: any
   stakingAbi: any
-  depositTokenAddress: string
-  stakingContractAddress: string
-  amountToApprove: BigInt
+  depositTokenAddress: `0x${string}`
+  stakingContractAddress: `0x${string}`
 }
 
 export interface handleWithdrawProps {
-  address: string | null
-  writeContract: Function
-  stakingAbi: any
-  stakingContractAddress: string
-  amountToWithdraw: BigInt
-}
-
-export interface handleClaimProps {
-  address: string | null
-  writeContract: Function
-  stakingAbi: any
-  stakingContractAddress: string
-}
-
-export interface handleRewardProps {
-  address: `0x${string}` | null
+  address: `0x${string}`
   writeContract: Function
   stakingAbi: any
   stakingContractAddress: `0x${string}`
+}
+
+export interface handleClaimProps {
+  address: `0x${string}`
+  writeContract: Function
+  stakingAbi: any
+  stakingContractAddress: `0x${string}`
+}
+
+export interface handleRewardProps {
+  address: `0x${string}`
+  stakingAbi: any
+  stakingContractAddress: `0x${string}`
+  userInfo: readonly [bigint, bigint, bigint] | undefined
 }
 
 export interface UserInfo {

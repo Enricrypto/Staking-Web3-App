@@ -49,11 +49,6 @@ export default function Home() {
         ) : (
           <p>Loading balance...</p>
         )}
-        {user !== null ? (
-          <p>Pending Rewards: {user.pendingRewards.toString()}</p>
-        ) : (
-          <p>Loading Rewards...</p>
-        )}
         <BlockchainData setAccount={setAccount} setBalanceDepositToken={setBalanceDepositToken} setBalanceRewardToken={setBalanceRewardToken} setBalanceStakingContract={setBalanceStakingContract} setUser={setUser} />
       </main>
     </div>
