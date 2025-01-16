@@ -75,7 +75,7 @@ const BlockchainData: React.FC<BlockchainDataProps> = ({ setAccount, setBalanceD
       return;
     }
     try {
-      const mintValue = BigInt(Number(mintAmount) * 10 ** 18);
+      const mintValue = BigInt(Number(mintAmount) * 1e18);
       await writeContract({
         abi: tokenAbi,
         address: depositTokenAddress,
@@ -108,7 +108,7 @@ const BlockchainData: React.FC<BlockchainDataProps> = ({ setAccount, setBalanceD
     }
   
     try {
-      const depositValue = BigInt(Number(depositAmount)); 
+      const depositValue = BigInt(Number(depositAmount) * 1e18); 
       // Step 1: Call the approve function on the depositToken contract
       await writeContract({
         abi: tokenAbi,
@@ -150,7 +150,7 @@ const BlockchainData: React.FC<BlockchainDataProps> = ({ setAccount, setBalanceD
     }
 
     try {
-      const withdrawValue = BigInt(Number(withdrawAmount)); 
+      const withdrawValue = BigInt(Number(withdrawAmount) * 1e18); 
       await writeContract({
         abi: stakingAbi,
         address: stakingContractAddress,
